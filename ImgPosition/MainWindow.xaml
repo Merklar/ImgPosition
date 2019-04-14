@@ -8,17 +8,22 @@
         Title="Image Placer" Height="450" Width="800" WindowStartupLocation="CenterScreen" Background="#FF555555" ResizeMode="NoResize" Icon="353412-flag_107497.ico">
     <Grid Margin="0,0,212,0">
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="418" Margin="579,1,-213,0" VerticalAlignment="Top" Width="214" AllowDrop="True">
-            <Rectangle x:Name="DropSourceFileField" Fill="#FFBEBEFF" HorizontalAlignment="Left" Height="135" Margin="9,134,0,0" Stroke="Black" VerticalAlignment="Top" Width="194" Drop="DropSourceFileField_Drop"/>
+            <ComboBox x:Name="IgnoreHitTestCB" Margin="129,48,15,345" SelectedIndex="0">
+                <Label Content="true"/>
+                <Label Content="false"/>
+            </ComboBox>
         </Border>
-        <Label x:Name="labelZLayer" Content="Z" HorizontalAlignment="Left" Margin="659,18,-143,0" VerticalAlignment="Top" Width="64"/>
-        <TextBox x:Name="textBoxSourceFile" HorizontalAlignment="Left" Height="23" Margin="587,97,-203,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="196" UndoLimit="200" AllowDrop="True"/>
-        <Label x:Name="label" Content="Source File" HorizontalAlignment="Left" Margin="611,71,-181,0" VerticalAlignment="Top" Width="150" HorizontalContentAlignment="Center" FontSize="14"/>
+        <Rectangle x:Name="DropSourceFileField" Fill="#FFBEBEFF" HorizontalAlignment="Left" Height="220" Margin="589,143,-201,0" Stroke="Black" VerticalAlignment="Top" Width="194" Drop="DropSourceFileField_Drop" AllowDrop="True"/>
+        <Label x:Name="labelZLayer" Content="Z" HorizontalAlignment="Left" Margin="632,18,-114,0" VerticalAlignment="Top" Width="64"/>
+        <TextBox x:Name="textBoxSourceFile" HorizontalAlignment="Left" Height="22" Margin="587,116,-201,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="196" UndoLimit="200" AllowDrop="True"/>
+        <Label x:Name="label" Content="Source File" HorizontalAlignment="Left" Margin="611,87,-179,0" VerticalAlignment="Top" Width="150" HorizontalContentAlignment="Center" FontSize="14"/>
         <TextBox x:Name="textBoxMainField" HorizontalAlignment="Left" Height="242" Margin="10,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="562"/>
-        <Label x:Name="RectSourceFileLabel" Content="Файл СЮДА" HorizontalAlignment="Left" Margin="611,176.246,-181,0" VerticalAlignment="Top" FontSize="18" UseLayoutRounding="False" HorizontalContentAlignment="Center" IsEnabled="False" MaxWidth="140" MaxHeight="48" MinWidth="98" Height="48.188" Width="150" RenderTransformOrigin="0.507,0.77" IsHitTestVisible="False" Foreground="#FF0A0303" FontWeight="Bold"/>
+        <Label x:Name="RectSourceFileLabel" Content="Файл СЮДА" HorizontalAlignment="Left" Margin="611,227.577,-179,0" VerticalAlignment="Top" FontSize="18" UseLayoutRounding="False" HorizontalContentAlignment="Center" IsEnabled="False" MaxWidth="140" MaxHeight="48" MinWidth="98" Height="48.188" Width="150" RenderTransformOrigin="0.507,0.77" IsHitTestVisible="False" Foreground="#FF0A0303" FontWeight="Bold"/>
         <Rectangle x:Name="DropLayersField" Fill="#FFBEBEFF" HorizontalAlignment="Left" Height="144" Margin="10,267,0,0" Stroke="Black" VerticalAlignment="Top" Width="562" AllowDrop="True" Drop="DropLayersField_Drop"/>
         <Label x:Name="RectSourceFileLabel_Copy" Content="Слои вот СЮДА" HorizontalAlignment="Left" Margin="114.694,315.164,0,0" VerticalAlignment="Top" FontSize="18" UseLayoutRounding="False" HorizontalContentAlignment="Center" MaxWidth="400" MaxHeight="400" MinWidth="98" Height="48.188" Width="383.905" RenderTransformOrigin="0.507,0.77" IsHitTestVisible="False" Foreground="#FF0A0303" FontWeight="Bold" IsEnabled="False"/>
         <Button x:Name="buttonSaveToBuffer" Content="Сохранить" HorizontalAlignment="Left" Margin="623,371,-179,0" VerticalAlignment="Top" Width="138" Click="buttonSaveToBuffer_Click"/>
         <TextBox x:Name="textBoxZLevel" HorizontalAlignment="Left" Height="23" Margin="705,22,-201,0" TextWrapping="Wrap" Text="110" VerticalAlignment="Top" Width="78" IsUndoEnabled="True"/>
+        <Label x:Name="labelIHT" Content="IgnoreHT" HorizontalAlignment="Left" Margin="632,49,-150,0" VerticalAlignment="Top" Width="100"/>
 
     </Grid>
 </Window>

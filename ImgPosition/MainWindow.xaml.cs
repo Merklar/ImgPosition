@@ -89,10 +89,27 @@ namespace ImgPosition
             return z.ToString();
         }
 
-        private string GetImportStringPatern(string _name, string _x, string _y, string _z, string _animPath, string _tw, string _th, string _hx, string _hy)
+        private string GetIHTText()
         {
-            const string PATERN_STRING  = "currentScene:CreateGameObject{{name='{0}',x={1},y={2},z={3},aDeg=0,sx=1,sy=1,animPath='{4}',tx=0,ty=0,tw={5},th={6},nFrames=1,fps=0,hx={7},hy={8},blendMode=EBlendMode.NORMAL,color='0xFFFFFFFF',ignoreHitTest=false,loadImmediately=false,checkScene=true}}";
-            string _patern              = string.Format(PATERN_STRING, _name, _x, _y, _z, _animPath, _tw, _th, _hx, _hy);
+            Object tempObj  = IgnoreHitTestCB.SelectionBoxItem;
+            string iht;
+           
+            try
+            {
+                iht = tempObj.ToString();
+            }
+            catch
+            {
+                SetTextBoxFieldText("IGH - неправильного формата!");
+                return "true";
+            }
+            return iht;
+        }
+
+        private string GetImportStringPatern(string _name, string _x, string _y, string _z, string _animPath, string _tw, string _th, string _hx, string _hy, string _iht)
+        {
+            const string PATERN_STRING  = "currentScene:CreateGameObject{{name='{0}',x={1},y={2},z={3},aDeg=0,sx=1,sy=1,animPath='{4}',tx=0,ty=0,tw={5},th={6},nFrames=1,fps=0,hx={7},hy={8},blendMode=EBlendMode.NORMAL,color='0xFFFFFFFF',ignoreHitTest={9}, loadImmediately=false,checkScene=true}}";
+            string _patern              = string.Format(PATERN_STRING, _name, _x, _y, _z, _animPath, _tw, _th, _hx, _hy, _iht);
             return _patern;
         }
 
@@ -152,7 +169,7 @@ namespace ImgPosition
                             string[] imgProp = GetImageProperies(filePath);
                             string animPath = filePath.Remove(0, filePath.IndexOf("assets"));
                             animPath = animPath.Replace('\\', '/');
-                            OutputArray.Add(GetImportStringPatern(file, _dx.ToString(), _dy.ToString(), GetZText(), animPath, imgProp[0], imgProp[1], imgProp[2], imgProp[3]));
+                            OutputArray.Add(GetImportStringPatern(file, _dx.ToString(), _dy.ToString(), GetZText(), animPath, imgProp[0], imgProp[1], imgProp[2], imgProp[3], GetIHTText()));
                             OutputArray.Add("\n\n");
                         }
 

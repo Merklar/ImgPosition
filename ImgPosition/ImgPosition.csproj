@@ -126,12 +126,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Microsoft Office 2003 Front Page.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Microsoft Office 2003 Front Page.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="353412-flag_107497.ico" />
   </ItemGroup>
   <ItemGroup>
